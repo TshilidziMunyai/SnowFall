@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnowFall</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            height: 100vh
+        }
+
+        .snowflake {
+            position:absolute;
+            top: -10px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            opacity: 3;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    const flakeCount = 400;
+    for (let i = 0; i < flakeCount; i++) {
+        const flakes = document.createElement('div');
+        const size = Math.random() * 13 + 5;
+        const left = Math.random() * window.innerWidth;
+        const fallDuration = Math.random() * 3 + 2;
+
+        flakes.className = 'snowflake';
+        flakes.style.width = `${size}px`;
+        flakes.style.height = `${size}px`;
+        flakes.style.left = `${left}px`;
+        
+        flakes.style.animationDuration = `${fallDuration}s`;
+        flakes.style.animationDelay = `${Math.random() * 5}s`;
+
+        document.body.appendChild(flakes);
+    }
+</script>
+</body>
+</html>

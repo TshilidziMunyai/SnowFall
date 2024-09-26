@@ -1,2 +1,2 @@
 # SnowFall
-making snow fall with javaScript
+making snow fall with HTML and Javascript
